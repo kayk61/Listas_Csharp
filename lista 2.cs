@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace lista1;
 
@@ -6,8 +6,8 @@ class Program
 {
     static void Main(String[] args)
     {
-        int opcao = 1;
-        switch(opcao)
+        int opcao = 10;
+        switch (opcao)
         {
             case 1: exercicio1(); break;
             case 2: exercicio2(); break;
@@ -18,7 +18,7 @@ class Program
             case 7: exercicio7(); break;
             case 8: exercicio8(); break;
             case 9: exercicio9(); break;
-            case 10:exercicio10(); break;
+            case 10: exercicio10(); break;
 
         }
 
@@ -31,7 +31,7 @@ class Program
             Console.WriteLine("A soma de seus numeros é: " + (n1 + n2));
 
         }
-        static void exercicio2 ()
+        static void exercicio2()
         {
             Console.WriteLine("digite um numero e sera exibido seu dobro");
             int numero = int.Parse(Console.ReadLine()!);
@@ -58,7 +58,7 @@ class Program
             int n1 = int.Parse(Console.ReadLine()!);
             Console.WriteLine("Digite o segundo numero");
             int n2 = int.Parse(Console.ReadLine()!);
-            Console.WriteLine("O primeiro numero divido pelo segundo é: " +(n2/n1));
+            Console.WriteLine("O primeiro numero divido pelo segundo é: " + (n2 / n1));
         }
         static void exercicio6()
         {
@@ -74,18 +74,48 @@ class Program
             int n1 = int.Parse(Console.ReadLine()!);
             Console.WriteLine("Digite o segundo numero");
             int n2 = int.Parse(Console.ReadLine()!);
-            Console.WriteLine("O segundo numero menos o primeiro é: "+ (n2-n1));
+            Console.WriteLine("O segundo numero menos o primeiro é: " + (n2 - n1));
 
         }
         static void exercicio8()
         {
             Console.WriteLine("digite um numero e sera mostrado seu valor absoluto");
-            
+            double num = double.Parse(Console.ReadLine()!);
+            if (num < 0)
+            {
+                Console.WriteLine($"Seu numero absoluto é: {-1 * num}");
+
+            }
+            else
+            {
+                Console.WriteLine($"Seu numero absoluto é {num}");
+
+            }
+
+        }
+        static void exercicio9()
+        {
+            Console.WriteLine("Digite dois numero e será mostrado a multiplicação entre eles");
+            double num1 = double.Parse(Console.ReadLine()!);
+            double num2 = double.Parse(Console.ReadLine()!);
+            Console.WriteLine($"A multiplicação entre seus numeros é: {num1 * num2} ");
+        }
+        static void exercicio10()
+        {
+            Console.WriteLine("digit um numero e sera mostrado o resto de sua divisão por 2");
+            double num = double.Parse(Console.ReadLine()!);
+            if (num % 2 == 0)
+            {
+                Console.WriteLine("Divisão exata não há resto para ser exibido");
+            }
+            else
+            {
+                Console.WriteLine($"O resto de sua divisão é: {num % 2}");
+            }
+
 
 
         }
-
-
     }
 
 
