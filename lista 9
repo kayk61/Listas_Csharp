@@ -1,0 +1,268 @@
+sharpdeveloper
+
+using System;
+
+namespace lista_vetores
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // mude o numero da opçao para testar as demais consultas
+            int opcao = 1;
+
+            switch (opcao)
+            {
+                case 1: exercicio01(); break;
+                case 2: exercicio02(); break;
+                case 3: exercicio03(); break;
+                case 4: exercicio04(); break;
+                case 5: exercicio05(); break;
+                case 6: exercicio06(); break;
+                case 7: exercicio07(); break;
+                case 8: exercicio08(); break;
+                case 9: exercicio09(); break;
+                case 10: exercicio10(); break;
+
+                default: Console.WriteLine("Opcao invalida!"); break;
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+
+        static void exercicio01()
+        {
+            int[] numeros = { 10, 20, 30, 40, 50 };
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine("Elemento na posicao " + i + ": " + numeros[i]);
+            }
+        }
+
+        static void exercicio02()
+        {
+            string[] nomes = new string[5];
+            double[] nota1 = new double[5];
+            double[] nota2 = new double[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Digite o nome do " + (i + 1) + "º aluno:");
+                nomes[i] = Console.ReadLine();
+
+                Console.WriteLine("Digite a primeira nota de " + nomes[i] + ":");
+                nota1[i] = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Digite a segunda nota de " + nomes[i] + ":");
+                nota2[i] = double.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\n--- LISTAGEM DOS ALUNOS ---");
+            for (int i = 0; i < 5; i++)
+            {
+                double media = (nota1[i] + nota2[i]) / 2;
+                Console.WriteLine("Nome: " + nomes[i] + " | Nota 1: " + nota1[i] + " | Nota 2: " + nota2[i] + " | Média: " + media.ToString("F2"));
+            }
+        }
+
+        static void exercicio03()
+        {
+            double[] valores = { 5.5, 7.2, 9.0, 4.8, 6.5 };
+            double soma = 0;
+
+            for (int i = 0; i < valores.Length; i++)
+            {
+                soma += valores[i];
+            }
+
+            double media = soma / valores.Length;
+            Console.WriteLine("A média dos valores do vetor é: " + media.ToString("F2"));
+        }
+
+        static void exercicio04()
+        {
+            int[] numeros = { 15, 87, 34, 92, 45, 12, 68 };
+            int maior = numeros[0];
+
+            for (int i = 1; i < numeros.Length; i++)
+            {
+                if (numeros[i] > maior)
+                {
+                    maior = numeros[i];
+                }
+            }
+
+            Console.WriteLine("O maior valor no vetor é: " + maior);
+        }
+
+        static void exercicio05()
+        {
+            int[] numeros = { 15, 87, 34, 92, 45, 12, 68 };
+            int menor = numeros[0];
+
+            for (int i = 1; i < numeros.Length; i++)
+            {
+                if (numeros[i] < menor)
+                {
+                    menor = numeros[i];
+                }
+            }
+
+            Console.WriteLine("O menor valor no vetor é: " + menor);
+        }
+
+        static void exercicio06()
+        {
+            int[] vet1 = new int[5];
+            int[] vet2 = new int[5];
+            int[] vetSoma = new int[5];
+
+            Console.WriteLine("--- Preenchendo o Primeiro Vetor ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Digite o " + (i + 1) + "º numero do Vetor 1:");
+                vet1[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\n--- Preenchendo o Segundo Vetor ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Digite o " + (i + 1) + "º numero do Vetor 2:");
+                vet2[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                vetSoma[i] = vet1[i] + vet2[i];
+            }
+
+            Console.WriteLine("\n--- Vetor Soma ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Elemento " + i + ": " + vetSoma[i]);
+            }
+        }
+
+        static void exercicio07()
+        {
+            int[] vet1 = new int[5];
+            int[] vet2 = new int[5];
+            int[] vetSoma = new int[5];
+
+            Console.WriteLine("--- Preenchendo o Primeiro Vetor ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Digite o " + (i + 1) + "º numero do Vetor 1:");
+                vet1[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\n--- Preenchendo o Segundo Vetor ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Digite o " + (i + 1) + "º numero do Vetor 2:");
+                vet2[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                vetSoma[i] = vet1[i] + vet2[i];
+            }
+
+            Console.WriteLine("\n--- Vetor Soma ---");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Elemento " + i + ": " + vetSoma[i]);
+            }
+        }
+
+        static void exercicio08()
+        {
+            int[] numeros = { 12, 5, 8, 30, 2, 19, 45 };
+
+            Array.Sort(numeros);
+            Array.Reverse(numeros);
+
+            Console.WriteLine("Vetor ordenado em ordem decrescente:");
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine(numeros[i]);
+            }
+        }
+
+        static void exercicio09()
+        {
+            string[] nomes = new string[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite o " + (i + 1) + "º nome:");
+                nomes[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("\n--- LISTA DOS NOMES DIGITADOS ---");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine((i + 1) + " - " + nomes[i]);
+            }
+        }
+
+        static void exercicio10()
+        {
+            string[] nomes = new string[40];
+            int[] quantidades = new int[40];
+            double[] precios = new double[40];
+            int totalCadastrados = 0;
+            int opcaoMenu = 0;
+
+            while (opcaoMenu != 3)
+            {
+                Console.WriteLine("\nMENU");
+                Console.WriteLine("1. Cadastra mercadorias");
+                Console.WriteLine("2. Exibe valor total em mercadorias da empresa");
+                Console.WriteLine("3. Sair");
+                Console.Write("OPÇÃO: ");
+                opcaoMenu = int.Parse(Console.ReadLine());
+
+                if (opcaoMenu == 1)
+                {
+                    if (totalCadastrados < 40)
+                    {
+                        Console.WriteLine("\nCadastrando mercadoria " + (totalCadastrados + 1) + " de 40:");
+                        Console.Write("Nome: ");
+                        nomes[totalCadastrados] = Console.ReadLine();
+
+                        Console.Write("Quantidade em estoque: ");
+                        quantidades[totalCadastrados] = int.Parse(Console.ReadLine());
+
+                        Console.Write("Preço unitário: ");
+                        precios[totalCadastrados] = double.Parse(Console.ReadLine());
+
+                        totalCadastrados++;
+                        Console.WriteLine("Mercadoria cadastrada com sucesso!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Limite máximo de 40 mercadorias atingido!");
+                    }
+                }
+                else if (opcaoMenu == 2)
+                {
+                    double valorTotalEmpresa = 0;
+
+                    for (int i = 0; i < totalCadastrados; i++)
+                    {
+                        valorTotalEmpresa += quantidades[i] * precios[i];
+                    }
+
+                    Console.WriteLine("\nValor total em mercadorias da empresa: R$ " + valorTotalEmpresa.ToString("F2"));
+                }
+                else if (opcaoMenu != 3)
+                {
+                    Console.WriteLine("Opção inválida!");
+                }
+            }
+        }
+    }
+}
