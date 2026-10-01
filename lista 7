@@ -1,0 +1,267 @@
+using System;
+
+namespace lista_7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // mude o numero da opçao para testar as demais consultas
+            int opcao = 1;
+
+            switch (opcao)
+            {
+                case 1: exercicio01(); break;
+                case 2: exercicio02(); break;
+                case 3: exercicio03(); break;
+                case 4: exercicio04(); break;
+                case 5: exercicio05(); break;
+                case 6: exercicio06(); break;
+                case 7: exercicio07(); break;
+                case 8: exercicio08(); break;
+                case 9: exercicio09(); break;
+                case 10: exercicio10(); break;
+                case 11: exercicio11(); break;
+                case 12: exercicio12(); break;
+
+                default: Console.WriteLine("Opcao invalida!"); break;
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+
+        static void exercicio01()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int limite = int.Parse(Console.ReadLine());
+
+            int i = 0;
+            while (i <= limite)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+                i++;
+            }
+        }
+
+        static void exercicio02()
+        {
+            Console.WriteLine("Digite um numero inteiro para ver sua tabuada:");
+            int numero = int.Parse(Console.ReadLine());
+
+            int contador = 1;
+            while (contador <= 10)
+            {
+                Console.WriteLine(numero + " x " + contador + " = " + (numero * contador));
+                contador++;
+            }
+        }
+
+        static void exercicio03()
+        {
+            Console.WriteLine("Quantos numeros deseja somar?");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            int soma = 0;
+            int contador = 1;
+
+            while (contador <= quantidade)
+            {
+                Console.WriteLine("Digite o " + contador + "º numero:");
+                soma += int.Parse(Console.ReadLine());
+                contador++;
+            }
+
+            Console.WriteLine("A soma de todos os numeros é: " + soma);
+        }
+
+        static void exercicio04()
+        {
+            string senhaCorreta = "1234";
+            int tentativas = 0;
+            bool acertou = false;
+
+            while (tentativas < 3 && !acertou)
+            {
+                Console.WriteLine("Digite a senha:");
+                string senhaDigitada = Console.ReadLine();
+                tentativas++;
+
+                if (senhaDigitada == senhaCorreta)
+                {
+                    acertou = true;
+                    Console.WriteLine("Sucesso! Senha correta.");
+                }
+                else
+                {
+                    Console.WriteLine("Senha incorreta!");
+                }
+            }
+
+            if (!acertou)
+            {
+                Console.WriteLine("Acesso bloqueado! Numero maximo de tentativas excedido.");
+            }
+        }
+
+        static void exercicio05()
+        {
+            int soma = 0;
+            Console.WriteLine("Digite um numero inteiro (numero negativo para encerrar):");
+            int numero = int.Parse(Console.ReadLine());
+
+            while (numero >= 0)
+            {
+                soma += numero;
+                Console.WriteLine("Digite outro numero inteiro (numero negativo para encerrar):");
+                numero = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("A soma dos numeros digitados é: " + soma);
+        }
+
+        static void exercicio06()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int limite = int.Parse(Console.ReadLine());
+
+            int i = 0;
+            if (limite >= 0)
+            {
+                do
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    i++;
+                } while (i <= limite);
+            }
+        }
+
+        static void exercicio07()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int limite = int.Parse(Console.ReadLine());
+
+            int i = 0;
+            if (limite >= 0)
+            {
+                do
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    i++;
+                } while (i <= limite);
+            }
+        }
+
+        static void exercicio08()
+        {
+            Console.WriteLine("Digite um numero inteiro para ver sua tabuada:");
+            int numero = int.Parse(Console.ReadLine());
+
+            int contador = 1;
+            do
+            {
+                Console.WriteLine(numero + " x " + contador + " = " + (numero * contador));
+                contador++;
+            } while (contador <= 10);
+        }
+
+        static void exercicio09()
+        {
+            Console.WriteLine("Quantos numeros deseja somar?");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            int soma = 0;
+            int contador = 1;
+
+            if (quantidade > 0)
+            {
+                do
+                {
+                    Console.WriteLine("Digite o " + contador + "º numero:");
+                    soma += int.Parse(Console.ReadLine());
+                    contador++;
+                } while (contador <= quantidade);
+            }
+
+            Console.WriteLine("A soma de todos os numeros é: " + soma);
+        }
+
+        static void exercicio10()
+        {
+            string senhaCorreta = "1234";
+            int tentativas = 0;
+            bool acertou = false;
+
+            do
+            {
+                Console.WriteLine("Digite a senha:");
+                string senhaDigitada = Console.ReadLine();
+                tentativas++;
+
+                if (senhaDigitada == senhaCorreta)
+                {
+                    acertou = true;
+                    Console.WriteLine("Sucesso! Senha correta.");
+                }
+                else
+                {
+                    Console.WriteLine("Senha incorreta!");
+                }
+
+            } while (tentativas < 3 && !acertou);
+
+            if (!acertou)
+            {
+                Console.WriteLine("Acesso bloqueado! Numero maximo de tentativas excedido.");
+            }
+        }
+
+        static void exercicio11()
+        {
+            int soma = 0;
+            int numero;
+
+            do
+            {
+                Console.WriteLine("Digite um numero inteiro (numero negativo para encerrar):");
+                numero = int.Parse(Console.ReadLine());
+
+                if (numero >= 0)
+                {
+                    soma += numero;
+                }
+
+            } while (numero >= 0);
+
+            Console.WriteLine("A soma dos numeros digitados é: " + soma);
+        }
+
+        static void exercicio12()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int limite = int.Parse(Console.ReadLine());
+
+            int i = 0;
+            if (limite >= 0)
+            {
+                do
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    i++;
+                } while (i <= limite);
+            }
+        }
+    }
+}
