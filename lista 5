@@ -14,16 +14,16 @@ namespace lista_5
 
             switch (opcao)
             {
-                case 1: exercicio01(); break; // a) Par ou ímpar
-                case 2: exercicio02(); break; // b) Maior entre dois números
-                case 3: exercicio03(); break; // c) Lista vazia
-                case 4: exercicio04(); break; // d) String vazia
-                case 5: exercicio05(); break; // e) Condição verdadeira
-                case 6: exercicio06(); break; // f) Valor absoluto
-                case 7: exercicio07(); break; // g) Positivo, negativo ou zero
-                case 8: exercicio08(); break; // h) Converter string em número
-                case 9: exercicio09(); break; // i) Divisível por outro número
-                case 10: exercicio10(); break; // j) Variável nula ou não
+                case 1: exercicio01(); break; 
+                case 2: exercicio02(); break; 
+                case 3: exercicio03(); break; 
+                case 4: exercicio04(); break; 
+                case 5: exercicio05(); break; 
+                case 6: exercicio06(); break; 
+                case 7: exercicio07(); break; 
+                case 8: exercicio08(); break; 
+                case 9: exercicio09(); break; 
+                case 10: exercicio10(); break; 
 
                 default: Console.WriteLine("opcao invalida"); break;
             }
@@ -32,7 +32,7 @@ namespace lista_5
             Console.ReadKey();
         }
 
-        // a) Verifique se um número é par ou ímpar.
+    
         static void exercicio01()
         {
             Console.WriteLine("Digite um numero inteiro:");
@@ -42,7 +42,7 @@ namespace lista_5
             Console.WriteLine("O número é: " + resultado);
         }
 
-        // b) Encontre o maior entre dois números.
+     
         static void exercicio02()
         {
             Console.WriteLine("Digite o primeiro numero:");
@@ -54,7 +54,7 @@ namespace lista_5
             Console.WriteLine("O maior número é: " + maior);
         }
 
-        // c) Verifique se uma lista está vazia.
+       
         static void exercicio03()
         {
             List<string> lista = new List<string>();
@@ -63,7 +63,7 @@ namespace lista_5
             Console.WriteLine(status);
         }
 
-        // d) Verifique se uma string está vazia.
+        
         static void exercicio04()
         {
             Console.WriteLine("Digite um texto ou pressione ENTER para deixar vazio:");
@@ -73,7 +73,6 @@ namespace lista_5
             Console.WriteLine(resultado);
         }
 
-        // e) Verifique se uma condição é verdadeira.
         static void exercicio05()
         {
             Console.WriteLine("Digite a sua idade:");
@@ -85,7 +84,6 @@ namespace lista_5
             Console.WriteLine(mensagem);
         }
 
-        // f) Calcule o valor absoluto de um número.
         static void exercicio06()
         {
             Console.WriteLine("Digite um numero (positivo ou negativo):");
@@ -95,18 +93,15 @@ namespace lista_5
             Console.WriteLine("O valor absoluto é: " + absoluto);
         }
 
-        // g) Verifique se um número é positivo, negativo ou zero.
         static void exercicio07()
         {
             Console.WriteLine("Digite um numero:");
             int numero = int.Parse(Console.ReadLine());
 
-            // Ternário encadeado
             string resultado = (numero > 0) ? "Positivo" : (numero < 0) ? "Negativo" : "Zero";
             Console.WriteLine("O número é: " + resultado);
         }
 
-        // h) Converta uma string em um número.
         static void exercicio08()
         {
             Console.WriteLine("Digite um numero em formato de texto:");
@@ -119,7 +114,6 @@ namespace lista_5
             Console.WriteLine(mensagem);
         }
 
-        // i) Verifique se um número é divisível por outro.
         static void exercicio09()
         {
             Console.WriteLine("Digite o numero dividendo:");
@@ -131,7 +125,6 @@ namespace lista_5
             Console.WriteLine(resultado);
         }
 
-        // j) Verifique se uma variável é nula ou não.
         static void exercicio10()
         {
             string nome = null;
