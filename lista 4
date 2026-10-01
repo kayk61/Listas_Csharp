@@ -1,0 +1,217 @@
+using System;
+
+namespace lista_4;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // mude o numero da opçao para testar as demais consultas
+        int opcao = 1;
+
+        switch (opcao)
+        {
+            case 1: exercicio01(); break;
+            case 2: exercicio02(); break;
+            case 3: exercicio03(); break;
+            case 4: exercicio04(); break;
+            case 5: exercicio05(); break;
+            case 6: exercicio06(); break;
+            case 7: exercicio07(); break;
+            case 8: exercicio08(); break;
+            case 9: exercicio09(); break;
+            case 10: exercicio10(); break;
+            case 11: exercicio11(); break;
+            case 12: exercicio12(); break;
+            case 13: exercicio13(); break;
+            case 14: exercicio14(); break;
+            case 15: exercicio15(); break;
+
+            default: Console.WriteLine("opcao invalida"); break;
+        }
+    }
+
+    static void exercicio01()
+    {
+        Console.WriteLine("Digite sua idade:");
+        int idade = int.Parse(Console.ReadLine()!);
+        Console.WriteLine("Voce possui carteira de motorista? (sim/nao)");
+        string carteira = Console.ReadLine()!;
+
+        if (idade > 18 && carteira == "sim")
+        {
+            Console.WriteLine("Você pode dirigir");
+        } else
+        {
+            Console.WriteLine("Voce nao pode dirigir");
+        }
+    }
+
+    static void exercicio02()
+    {
+        Console.WriteLine("Deseja comprar um carro novo? (sim/nao)");
+        string desejaCarro = Console.ReadLine()!;
+        Console.WriteLine("Tem dinheiro suficiente? (sim/nao)");
+        string temDinheiro = Console.ReadLine()!;
+
+        if (desejaCarro == "sim" && temDinheiro == "sim")
+        {
+            Console.WriteLine("Parabéns, você pode comprar um carro novo!");
+        }
+    }
+
+    static void exercicio03()
+    {
+        Console.WriteLine("Possui diploma de ensino superior? (sim/nao)");
+        string diploma = Console.ReadLine()!;
+        Console.WriteLine("Digite sua idade:");
+        int idade = int.Parse(Console.ReadLine()!);
+
+        if (diploma == "sim" && idade > 21)
+        {
+            Console.WriteLine("Parabéns, você está qualificado para a vaga!");
+        }
+    }
+
+    static void exercicio04()
+    {
+        Console.WriteLine("Voce e assinante de um serviço de streaming? (sim/nao)");
+        string assinante = Console.ReadLine()!;
+        Console.WriteLine("Ja assistiu a serie especifica? (sim/nao)");
+        string assistiu = Console.ReadLine()!;
+
+        if (assinante == "sim" && assistiu == "sim")
+        {
+            Console.WriteLine("Ótimo, agora você pode assistir à nova temporada!");
+        }
+    }
+
+    static void exercicio05()
+    {
+        Console.WriteLine("Digite seu nome:");
+        string nome = Console.ReadLine()!;
+        Console.WriteLine("Digite sua idade:");
+        int idade = int.Parse(Console.ReadLine()!);
+
+        if (nome.Length > 3 && idade >= 18)
+        {
+            Console.WriteLine("Acesso permitido");
+        }
+        else
+        {
+            Console.WriteLine("Acesso negado");
+        }
+    }
+
+    static void exercicio06()
+    {
+        Console.WriteLine("Deseja adicionar acucar? (sim/nao)");
+        string acucar = Console.ReadLine()!;
+        Console.WriteLine("Deseja adicionar leite? (sim/nao)");
+        string leite = Console.ReadLine()!;
+
+        if (acucar == "sim" || leite == "sim")
+        {
+            Console.WriteLine("Café com adicional preparado!");
+        }
+    }
+
+    static void exercicio07()
+    {
+        Console.WriteLine("Digite um numero inteiro:");
+        int numero = int.Parse(Console.ReadLine()!);
+
+        if (numero % 3 == 0 || numero % 5 == 0)
+        {
+            Console.WriteLine("O número é divisível por 3 ou por 5!");
+        }
+    }
+
+    static void exercicio08()
+    {
+        Console.WriteLine("Deseja comprar o produto? (sim/s/nao)");
+        string resposta = Console.ReadLine()!;
+
+        if (resposta == "sim" || resposta == "s")
+        {
+            Console.WriteLine("Obrigado pela compra!");
+        }
+    }
+
+    static void exercicio09()
+    {
+        Console.WriteLine("Digite seu nome:");
+        string nome = Console.ReadLine()!;
+
+        if (nome == "Wilson" || nome == "Gloria")
+        {
+            Console.WriteLine("Olá, bem-vindo(a) de volta!");
+        }
+    }
+
+    static void exercicio10()
+    {
+        Console.WriteLine("Digite um numero inteiro:");
+        int numero = int.Parse(Console.ReadLine()!);
+
+        if (numero > 10 || numero < 0)
+        {
+            Console.WriteLine("Número inválido!");
+        }
+    }
+
+    static void exercicio11()
+    {
+        Console.WriteLine("Voce nao e um robo? (sim/nao)");
+        string resposta = Console.ReadLine()!;
+
+        if (resposta == "nao")
+        {
+            Console.WriteLine("Por favor, prove que você não é um robô");
+        }
+    }
+
+    static void exercicio12()
+    {
+        Console.WriteLine("Digite um numero:");
+        double numero = double.Parse(Console.ReadLine()!);
+
+        if (numero != 0)
+        {
+            Console.WriteLine("O número é diferente de zero");
+        }
+    }
+
+    static void exercicio13()
+    {
+        Console.WriteLine("Voce nao e um membro inativo do clube? (sim/nao)");
+        string resposta = Console.ReadLine()!;
+
+        if (resposta == "nao")
+        {
+            Console.WriteLine("Por favor, atualize sua inscrição para continuar usufruindo dos benefícios do clube");
+        }
+    }
+
+    static void exercicio14()
+    {
+        Console.WriteLine("Digite uma palavra:");
+        string palavra = Console.ReadLine()!;
+
+        if (palavra != "")
+        {
+            Console.WriteLine("A palavra não é vazia");
+        }
+    }
+
+    static void exercicio15()
+    {
+        Console.WriteLine("Voce nao deseja cancelar a operacao? (sim/nao)");
+        string resposta = Console.ReadLine()!;
+
+        if (resposta == "nao")
+        {
+            Console.WriteLine("Por favor, confirme o cancelamento da operação");
+        }
+    }
+}
