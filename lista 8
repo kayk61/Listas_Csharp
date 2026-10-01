@@ -1,0 +1,185 @@
+sharpdeveloper
+
+using System;
+
+namespace lista_8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // mude o numero da opçao para testar as demais consultas
+            int opcao = 1;
+
+            switch (opcao)
+            {
+                case 1: exercicio01(); break;
+                case 2: exercicio02(); break;
+                case 3: exercicio03(); break;
+                case 4: exercicio04(); break;
+                case 5: exercicio05(); break;
+                case 6: exercicio06(); break;
+                case 7: exercicio07(); break;
+                case 8: exercicio08(); break;
+                case 9: exercicio09(); break;
+                case 10: exercicio10(); break;
+
+                default: Console.WriteLine("Opcao invalida!"); break;
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+
+        static void exercicio01()
+        {
+            for (int i = 0; i <= 100; i += 2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static void exercicio02()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int limite = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= limite; i += 2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static void exercicio03()
+        {
+            Console.WriteLine("Digite uma palavra:");
+            string palavra = Console.ReadLine();
+
+            for (int i = 0; i < palavra.Length; i++)
+            {
+                Console.WriteLine(palavra[i]);
+            }
+        }
+
+        static void exercicio04()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int numero = int.Parse(Console.ReadLine());
+
+            int soma = 0;
+            for (int i = 1; i <= numero; i++)
+            {
+                soma += i;
+            }
+
+            Console.WriteLine("A soma de 1 ate " + numero + " é: " + soma);
+        }
+
+        static void exercicio05()
+        {
+            Console.WriteLine("Digite um numero inteiro:");
+            int numero = int.Parse(Console.ReadLine());
+
+            int divisores = 0;
+            for (int i = 1; i <= numero; i++)
+            {
+                if (numero % i == 0)
+                {
+                    divisores++;
+                }
+            }
+
+            if (divisores == 2)
+            {
+                Console.WriteLine("O numero " + numero + " é PRIMO.");
+            }
+            else
+            {
+                Console.WriteLine("O numero " + numero + " NÃO é primo.");
+            }
+        }
+
+        static void exercicio06()
+        {
+            Console.WriteLine("Quantos numeros deseja inserir?");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            if (quantidade > 0)
+            {
+                Console.WriteLine("Digite o 1º numero:");
+                int maior = int.Parse(Console.ReadLine());
+
+                for (int i = 2; i <= quantidade; i++)
+                {
+                    Console.WriteLine("Digite o " + i + "º numero:");
+                    int num = int.Parse(Console.ReadLine());
+
+                    if (num > maior)
+                    {
+                        maior = num;
+                    }
+                }
+
+                Console.WriteLine("O maior numero digitado foi: " + maior);
+            }
+        }
+
+        static void exercicio07()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("5 x " + i + " = " + (5 * i));
+            }
+        }
+
+        static void exercicio08()
+        {
+            Console.WriteLine("Digite um numero inteiro positivo:");
+            int numero = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Divisores de " + numero + ":");
+            for (int i = 1; i <= numero; i++)
+            {
+                if (numero % i == 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        static void exercicio09()
+        {
+            Console.WriteLine("Numeros primos entre 1 e 100:");
+
+            for (int num = 1; num <= 100; num++)
+            {
+                int divisores = 0;
+
+                for (int i = 1; i <= num; i++)
+                {
+                    if (num % i == 0)
+                    {
+                        divisores++;
+                    }
+                }
+
+                if (divisores == 2)
+                {
+                    Console.WriteLine(num);
+                }
+            }
+        }
+
+        static void exercicio10()
+        {
+            int soma = 0;
+
+            for (int i = 2; i <= 100; i += 2)
+            {
+                soma += i;
+            }
+
+            Console.WriteLine("A soma dos numeros pares entre 1 e 100 é: " + soma);
+        }
+    }
+}
