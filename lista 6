@@ -1,0 +1,223 @@
+sharpdeveloper
+
+using System;
+
+namespace lista_6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          // mude o numero para visualizar as outras consultas
+            int opcao = 1;
+
+            switch (opcao)
+            {
+                case 1: exercicio01(); break;
+                case 2: exercicio02(); break;
+                case 3: exercicio03(); break;
+                case 4: exercicio04(); break;
+                case 5: exercicio05(); break;
+                case 6: exercicio06(); break;
+                case 7: exercicio07(); break;
+                case 8: exercicio08(); break;
+                case 9: exercicio09(); break;
+                case 10: exercicio10(); break;
+
+                default: Console.WriteLine("Opcao invalida!"); break;
+            }
+
+            Console.WriteLine("\nPressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+
+        static void exercicio01()
+        {
+            DateTime agora = DateTime.Now;
+            Console.WriteLine("Data e Hora atual: " + agora.ToString("dd/MM/yyyy HH:mm:ss"));
+        }
+
+        static void exercicio02()
+        {
+            Console.WriteLine("Digite a primeira data (dd/mm/aaaa):");
+            DateTime data1 = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a segunda data (dd/mm/aaaa):");
+            DateTime data2 = DateTime.Parse(Console.ReadLine());
+
+            TimeSpan diferenca = data2 - data1;
+            int dias = Math.Abs(diferenca.Days);
+
+            Console.WriteLine("A diferença entre as datas é de: " + dias + " dias.");
+        }
+
+        static void exercicio03()
+        {
+            Console.WriteLine("Digite sua data de nascimento (dd/mm/aaaa):");
+            DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+            DateTime hoje = DateTime.Now;
+
+            int idade = hoje.Year - dataNascimento.Year;
+
+            if (hoje < dataNascimento.AddYears(idade))
+            {
+                idade--;
+            }
+
+            Console.WriteLine("Sua idade é: " + idade + " anos.");
+        }
+
+        static void exercicio04()
+        {
+            Console.WriteLine("Digite uma data (dd/mm/aaaa):");
+            DateTime data = DateTime.Parse(Console.ReadLine());
+
+            string diaMes = data.ToString("dd/MM");
+
+            if (diaMes == "01/01" || diaMes == "21/04" || diaMes == "01/05" || 
+                diaMes == "07/09" || diaMes == "12/10" || diaMes == "02/11" || 
+                diaMes == "15/11" || diaMes == "25/12")
+            {
+                Console.WriteLine("A data inserida é um Feriado Nacional!");
+            }
+            else
+            {
+                Console.WriteLine("A data inserida NÃO é um feriado nacional fixo.");
+            }
+        }
+
+        static void exercicio05()
+        {
+            Console.WriteLine("--- MENU DE OPÇÕES ---");
+            Console.WriteLine("1 - Opção 1");
+            Console.WriteLine("2 - Opção 2");
+            Console.WriteLine("3 - Opção 3");
+            Console.Write("Escolha uma opção: ");
+            int opcaoMenu = int.Parse(Console.ReadLine());
+
+            switch (opcaoMenu)
+            {
+                case 1:
+                    Console.WriteLine("Você escolheu a Opção 1: Iniciar sistema.");
+                    break;
+                case 2:
+                    Console.WriteLine("Você escolheu a Opção 2: Configurações.");
+                    break;
+                case 3:
+                    Console.WriteLine("Você escolheu a Opção 3: Relatórios.");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida!");
+                    break;
+            }
+        }
+
+        static void exercicio06()
+        {
+            Console.WriteLine("Digite um número inteiro:");
+            int numero = int.Parse(Console.ReadLine());
+
+            if (numero > 0)
+            {
+                Console.WriteLine("O número é POSITIVO.");
+            }
+            else if (numero < 0)
+            {
+                Console.WriteLine("O número é NEGATIVO.");
+            }
+            else
+            {
+                Console.WriteLine("O número é ZERO.");
+            }
+        }
+
+        static void exercicio07()
+        {
+            Console.WriteLine("Escolha uma cor (vermelho, azul ou verde):");
+            string cor = Console.ReadLine().ToLower();
+
+            switch (cor)
+            {
+                case "vermelho":
+                    Console.WriteLine("A cor escolhida foi Vermelho.");
+                    break;
+                case "azul":
+                    Console.WriteLine("A cor escolhida foi Azul.");
+                    break;
+                case "verde":
+                    Console.WriteLine("A cor escolhida foi Verde.");
+                    break;
+                default:
+                    Console.WriteLine("Cor não reconhecida!");
+                    break;
+            }
+        }
+
+        static void exercicio08()
+        {
+            Console.WriteLine("Digite uma letra:");
+            char letra = char.Parse(Console.ReadLine().ToLower());
+
+            if (char.IsLetter(letra))
+            {
+                switch (letra)
+                {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        Console.WriteLine("A letra '" + letra + "' é uma VOGAL.");
+                        break;
+                    default:
+                        Console.WriteLine("A letra '" + letra + "' é uma CONSOANTE.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("O caractere digitado não é uma letra válida.");
+            }
+        }
+
+        static void exercicio09()
+        {
+            Console.WriteLine("Digite um número de 1 a 7 para o dia da semana:");
+            int dia = int.Parse(Console.ReadLine());
+
+            switch (dia)
+            {
+                case 1: Console.WriteLine("Domingo"); break;
+                case 2: Console.WriteLine("Segunda-feira"); break;
+                case 3: Console.WriteLine("Terça-feira"); break;
+                case 4: Console.WriteLine("Quarta-feira"); break;
+                case 5: Console.WriteLine("Quinta-feira"); break;
+                case 6: Console.WriteLine("Sexta-feira"); break;
+                case 7: Console.WriteLine("Sábado"); break;
+                default: Console.WriteLine("Número inválido! Digite um valor entre 1 e 7."); break;
+            }
+        }
+
+        static void exercicio10()
+        {
+            Console.WriteLine("Escolha o tamanho da camiseta (P, M ou G):");
+            string tamanho = Console.ReadLine().ToUpper();
+
+            switch (tamanho)
+            {
+                case "P":
+                    Console.WriteLine("Camiseta Tamanho P - Preço: R$ 25,00");
+                    break;
+                case "M":
+                    Console.WriteLine("Camiseta Tamanho M - Preço: R$ 30,00");
+                    break;
+                case "G":
+                    Console.WriteLine("Camiseta Tamanho G - Preço: R$ 35,00");
+                    break;
+                default:
+                    Console.WriteLine("Tamanho inválido! Escolha P, M ou G.");
+                    break;
+            }
+        }
+    }
+}
